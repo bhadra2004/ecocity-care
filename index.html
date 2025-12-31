@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoCity Care – Sustainable City System</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f7f4;
+            margin: 0;
+        }
+        header {
+            background-color: #2f8f6f;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        nav {
+            background-color: #dff1ea;
+            padding: 10px;
+            text-align: center;
+        }
+        nav button {
+            margin: 5px;
+            padding: 8px 15px;
+            border: none;
+            background-color: #2f8f6f;
+            color: white;
+            cursor: pointer;
+        }
+        section {
+            display: none;
+            padding: 20px;
+        }
+        section.active {
+            display: block;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 8px;
+        }
+        input, textarea, select, button {
+            width: 100%;
+            margin-top: 8px;
+            padding: 8px;
+        }
+        footer {
+            background-color: #2f8f6f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>EcoCity Care</h1>
+    <p>Sustainable City Complaint Management System</p>
+</header>
+
+<nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('report')">Report Issue</button>
+    <button onclick="showSection('status')">Status</button>
+    <button onclick="showSection('admin')">Admin</button>
+</nav>
+
+<section id="home" class="active">
+    <div class="card">
+        <h2>Welcome to EcoCity Care</h2>
+        <p>
+            EcoCity Care helps citizens report civic issues and supports
+            sustainable city management through digital solutions.
+        </p>
+    </div>
+</section>
+
+<section id="report">
+    <div class="card">
+        <h2>Report an Issue</h2>
+        <select>
+            <option>Garbage Overflow</option>
+            <option>Road Damage</option>
+            <option>Streetlight Issue</option>
+            <option>Water Leakage</option>
+        </select>
+
+        <input type="text" placeholder="Enter location">
+        <textarea placeholder="Describe the issue"></textarea>
+
+        <button onclick="submitComplaint()">Submit Complaint</button>
+    </div>
+</section>
+
+<section id="status">
+    <div class="card">
+        <h2>Complaint Status</h2>
+        <p><strong>ID:</strong> ECC001</p>
+        <p><strong>Status:</strong> In Progress</p>
+    </div>
+</section>
+
+<section id="admin">
+    <div class="card">
+        <h2>Admin Dashboard</h2>
+        <p>• View reported complaints</p>
+        <p>• Assign tasks to staff</p>
+        <p>• Update complaint status</p>
+    </div>
+</section>
+
+<footer>
+    <p>EcoCity Care © 2025 | SDG 11 – Sustainable Cities</p>
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('section');
+        sections.forEach(sec => sec.classList.remove('active'));
+        document.getElementById(sectionId).classList.add('active');
+    }
+
+    function submitComplaint() {
+        alert("Your complaint has been submitted successfully!");
+        showSection('status');
+    }
+</script>
+
+</body>
+</html>
